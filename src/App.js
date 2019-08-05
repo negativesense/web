@@ -3,7 +3,13 @@ import Placeholder from "./placeholder.component";
 // import Timeline from "./timeline.component";
 import { Github, LinkedIn } from "./socials";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { FriendOffer, FriendCont } from "./friends";
+import {
+  FriendOffer,
+  Birthday,
+  FriendOfferCrazy,
+  Crazy,
+  Message
+} from "./friends";
 
 const App = () => {
   return (
@@ -15,7 +21,7 @@ const App = () => {
         <Route
           exact
           path="/jason"
-          component={() => <FriendOffer company="IFDS" />}
+          component={() => <FriendOfferCrazy company="IFDS" />}
         />
         <Route
           exact
@@ -34,8 +40,33 @@ const App = () => {
         />
         <Route
           exact
+          path="/gabe"
+          component={() => <FriendOffer company="M🅰️nulife" />}
+        />
+        <Route
+          exact
+          path="/wmloh"
+          component={() => <FriendOffer company="Thomson Reuters" />}
+        />
+        <Route
+          exact
+          path="/anna"
+          component={() => <FriendOffer company="OTPP" />}
+        />
+        <Route
+          exact
           path="/aaron"
-          component={() => <FriendCont name="Aaron" />}
+          component={() => <Birthday name="Aaron" />}
+        />
+        <Route
+          exact
+          path="/anson"
+          component={() => <Crazy message="Welcome to Waterloo 😍" />}
+        />
+        <Route
+          exact
+          path="/karen"
+          component={() => <Message message="妈咪仲唔训觉？😡" />}
         />
         <Route component={Placeholder} />
       </Switch>
