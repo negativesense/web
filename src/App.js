@@ -10,12 +10,13 @@ import {
   Crazy,
   Message
 } from "./friends";
+import Main from "./main";
 
 const App = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route exact path="/" component={Placeholder} />
+        <Route exact path="/" component={Main} />
         <Route exact path="/github" component={Github} />
         <Route exact path="/linkedin" component={LinkedIn} />
         <Route
