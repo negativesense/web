@@ -2,53 +2,53 @@ import React from "react";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
-  margin: 100px 200px;
+  color: ${({ theme }) => theme.primary};
+  margin: 18% 10% 0 10%;
 `;
 
 const AboutContainer = styled.div`
   display: flex;
   align-items: center;
-  flex-basis: 0;
+  margin: 0 5%;
 `;
 
 const HeadshotContainer = styled.div`
   & > img {
-    width: 250px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
   }
 `;
 
 const IntroContainer = styled.div`
-  margin: 0 50px;
+  margin-right: 50px;
+  max-width: 700px;
 `;
 
-const HiText = styled.p`
-  color: white;
-  margin: 0;
+const Name = styled.div`
+  color: ${({ theme }) => theme.primary};
+  font-weight: bold;
+  font-size: 100px;
 `;
 
-const NameText = styled.p`
-  color: white;
-  font-size: 30pt;
+const IntroText = styled.div`
+  color: ${({ theme }) => theme.primary};
+  font-size: 20px;
   line-height: 30px;
-  margin: 30px 0;
-`;
-
-const IntroText = styled.p`
-  color: white;
-  margin: 0;
+  font-weight: 500;
+  margin: 10px 0 0 8px;
 `;
 
 const Main = () => (
   <MainContainer>
     <AboutContainer>
       <IntroContainer>
-        <HiText>Hi, my name is</HiText>
-        <NameText>Charles Zhang</NameText>
+        <Name>Charles Zhang</Name>
         <IntroText>
-          I am a Computer Science student at University of Waterloo. I love
-          building impactful products and provide elegant solutions to
-          challenging problems.
+          Hi there, I am a Computer Science student at the University of
+          Waterloo. I have experience in full-stack and android development for
+          consumer, corporate, and internal facing applications. I love building
+          impactful products that have a pleasant user experience.
         </IntroText>
       </IntroContainer>
       <HeadshotContainer>
