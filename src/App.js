@@ -16,7 +16,7 @@ const App = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route exact path="/" component={Main} />
+        <Route exact path="/" component={Placeholder} />
         <Route exact path="/github" component={Github} />
         <Route exact path="/linkedin" component={LinkedIn} />
         <Route
@@ -68,6 +68,11 @@ const App = () => {
           exact
           path="/karen"
           component={() => <Message message="妈咪仲唔训觉？😡" />}
+        />
+        <Route
+          exact
+          path="/nicole"
+          component={() => <Message message="Happy 🅱️elated 🅱️irthday!!" />}
         />
         <Route component={Placeholder} />
       </Switch>
