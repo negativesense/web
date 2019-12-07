@@ -6,7 +6,12 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 const Container = styled.div`
   text-align: center;
   color: ${({ theme }) => theme.primary};
-  margin-top: 25%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 `;
 
 const SocialIcon = styled(FontAwesomeIcon)`

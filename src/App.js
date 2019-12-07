@@ -1,5 +1,6 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+
 import Placeholder from "./placeholder.component";
 // import Timeline from "./timeline.component";
 import { Github, LinkedIn } from "./socials";
@@ -22,13 +23,36 @@ const theme = {
   bright: "#54a9ff"
 };
 
+const TopBar = styled.div`
+  padding: 2%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+const Link = styled.a`
+  font-size: 24px;
+  color: ${({ theme }) => theme.primary};
+  margin: 0 15px;
+  text-decoration-line: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <TopBar>
+          <Link href="/">About</Link>
+          <Link href="https://github.com/gzcharleszhang">Projects</Link>
+          {/* <Link href="blog">Blog</Link> */}
+          <Link href="resume.pdf">Resume</Link>
+        </TopBar>
         <Switch>
-          <Route exact path="/" component={Placeholder} />
-          <Route exact path="/main" component={Main} />
+          <Route exact path="/" component={Main} />
           <Route exact path="/github" component={Github} />
           <Route exact path="/linkedin" component={LinkedIn} />
           <Route
