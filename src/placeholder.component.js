@@ -1,18 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import anime from "animejs";
 
 const Container = styled.div`
   text-align: center;
-  color: #ffffff;
-  margin-top: 25%;
+  color: ${({ theme }) => theme.primary};
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 `;
 
 const SocialIcon = styled(FontAwesomeIcon)`
   margin: 0 0.5em;
-  color: #ffffff;
+  color: ${({ theme }) => theme.primary};
 `;
 
 const Placeholder = () => {
