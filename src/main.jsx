@@ -17,6 +17,10 @@ const MainContainer = styled.div`
 const AboutContainer = styled.div`
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const HeadshotContainer = styled.div`
@@ -29,22 +33,41 @@ const HeadshotContainer = styled.div`
 
 const IntroContainer = styled.div`
   margin-right: 50px;
+
+  @media only screen and (max-width: 768px) {
+    margin: 0 0 50px 0;
+  }
 `;
 
 const Name = styled.div`
   font-weight: bold;
   font-size: 100px;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 70px;
+  }
+
+  @media only screen and (max-width: 992px) {
+    font-size: 50px;
+  }
 `;
 
 const IntroText = styled.div`
   font-size: 20px;
   line-height: 30px;
   font-weight: 500;
-  margin: 10px 0 0 8px;
+  margin: 30px 0 0 8px;
+
+  @media only screen and (max-width: 992px) {
+    /* For everything bigger than 768px */
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 4px;
+  }
 `;
 
 const SocialIcon = styled(FontAwesomeIcon)`
-  margin: 20px 12px 0 8px;
+  margin: 40px 12px 0 8px;
   color: ${({ theme }) => theme.primary};
 `;
 

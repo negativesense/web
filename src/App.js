@@ -20,7 +20,8 @@ const theme = {
   secondary: "#577899",
   light: "#bed4ea",
   background: "#f7fbff",
-  bright: "#54a9ff"
+  bright: "#54a9ff",
+  xs: "768px"
 };
 
 const TopBar = styled.div`
