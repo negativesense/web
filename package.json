@@ -12,6 +12,7 @@
     "animejs": "^3.0.1",
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
+    "react-anime": "^2.2.0",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
@@ -20,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && yarn post-build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build && yarn post-build",
     "post-build": "cp CNAME build && cp 404.html build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

@@ -12,13 +12,24 @@ const MainContainer = styled.div`
   -moz-transform: translateX(-17%) translateY(-50%);
   -webkit-transform: translateX(-17%) translateY(-50%);
   transform: translateX(-17%) translateY(-50%);
+
+  @media only screen and (max-width: 420px) and (max-height: 700px) {
+    position: static;
+    top: 0;
+    left: 0;
+    -moz-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    margin-top: 30px;
+    padding: 0 20px;
+  }
 `;
 
 const AboutContainer = styled.div`
   display: flex;
   align-items: center;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 760px) {
     flex-direction: column;
   }
 `;
@@ -29,12 +40,7 @@ const HeadshotContainer = styled.div`
     height: 200px;
     border-radius: 50%;
 
-    @media only screen and (max-width: 768px) {
-      width: 150px;
-      height: 150px;
-    }
-
-    @media only screen and (max-width: 350px) {
+    @media only screen and (max-width: 760px) {
       width: 100px;
       height: 100px;
     }
@@ -44,7 +50,7 @@ const HeadshotContainer = styled.div`
 const IntroContainer = styled.div`
   margin-right: 50px;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 760px) {
     margin: 0 0 50px 0;
   }
 `;
@@ -61,11 +67,11 @@ const Name = styled.div`
     font-size: 50px;
   }
 
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: 760px) {
     font-size: 35px;
   }
 
-  @media only screen and (max-width: 350px) {
+  @media only screen and (max-width: 420px) {
     font-size: 25px;
   }
 `;
@@ -76,13 +82,10 @@ const IntroText = styled.div`
   font-weight: 500;
   margin: 30px 0 0 8px;
 
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 760px) {
     font-size: 14px;
     line-height: 20px;
     margin-left: 4px;
-  }
-
-  @media only screen and (max-width: 350px) {
     margin-top: 20px;
   }
 `;
@@ -91,13 +94,9 @@ const SocialIcon = styled(FontAwesomeIcon)`
   margin: 40px 12px 0 8px;
   color: ${({ theme }) => theme.primary};
 
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 760px) {
     margin-left: 4px;
-  }
-
-  @media only screen and (max-width: 350px) {
     margin-top: 30px;
-    margin-left: 4px;
   }
 `;
 

@@ -18,8 +18,8 @@ const Link = styled.a`
     cursor: pointer;
   }
 
-  @media only screen and (max-width: 768px) {
-    font-size: 14px;
+  @media only screen and (max-width: 760px) {
+    font-size: 12px;
     margin: 0 10px;
   }
 `;
@@ -37,13 +37,13 @@ const ThemeSwitch = styled.div`
     cursor: pointer;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 760px) {
     width: 33px;
     height: 18px;
     margin: 0 10px;
   }
 
-  @media only screen and (max-width: 350px) {
+  @media only screen and (max-width: 420px) {
     width: 22px;
     height: 12px;
     margin: 0 10px;
@@ -58,12 +58,12 @@ const Slider = styled.div`
   border-radius: 50%;
   transition: transform 0.1s;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 760px) {
     width: 14px;
     height: 14px;
   }
 
-  @media only screen and (max-width: 350px) {
+  @media only screen and (max-width: 420px) {
     width: 8px;
     height: 8px;
   }
@@ -73,13 +73,13 @@ const Slider = styled.div`
     `
       transform: translateX(20px);
 
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 760px) {
         transform: translateX(15px);
 
       }
 
-      @media only screen and (max-width: 350px) {
-        transform: translateX(9px);
+      @media only screen and (max-width: 420px) {
+        transform: translateX(11px);
 
       }
     `};
