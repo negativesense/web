@@ -17,7 +17,10 @@ const Link = styled.a`
 
   &:hover {
     cursor: pointer;
-    text-shadow: 2px 2px 10px ${({ theme }) => theme.bright};
+    transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
   }
 
   @media only screen and (max-width: 760px) {
