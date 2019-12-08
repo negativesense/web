@@ -28,6 +28,16 @@ const HeadshotContainer = styled.div`
     width: 200px;
     height: 200px;
     border-radius: 50%;
+
+    @media only screen and (max-width: 768px) {
+      width: 150px;
+      height: 150px;
+    }
+
+    @media only screen and (max-width: 350px) {
+      width: 100px;
+      height: 100px;
+    }
   }
 `;
 
@@ -50,6 +60,14 @@ const Name = styled.div`
   @media only screen and (max-width: 992px) {
     font-size: 50px;
   }
+
+  @media only screen and (max-width: 640px) {
+    font-size: 35px;
+  }
+
+  @media only screen and (max-width: 350px) {
+    font-size: 25px;
+  }
 `;
 
 const IntroText = styled.div`
@@ -59,16 +77,28 @@ const IntroText = styled.div`
   margin: 30px 0 0 8px;
 
   @media only screen and (max-width: 992px) {
-    /* For everything bigger than 768px */
     font-size: 14px;
     line-height: 20px;
     margin-left: 4px;
+  }
+
+  @media only screen and (max-width: 350px) {
+    margin-top: 20px;
   }
 `;
 
 const SocialIcon = styled(FontAwesomeIcon)`
   margin: 40px 12px 0 8px;
   color: ${({ theme }) => theme.primary};
+
+  @media only screen and (max-width: 992px) {
+    margin-left: 4px;
+  }
+
+  @media only screen and (max-width: 350px) {
+    margin-top: 30px;
+    margin-left: 4px;
+  }
 `;
 
 const Main = () => {
@@ -94,7 +124,8 @@ const Main = () => {
       direction: "reverse",
       easing: "easeInSine"
     });
-  });
+  }, []);
+
   return (
     <div>
       <MainContainer>
@@ -105,15 +136,23 @@ const Main = () => {
               <IntroText>
                 Hi there, I am a Computer Science student at the University of
                 Waterloo. I have experience in full-stack and android
-                development for consumer, corporate, and internal facing
+                development for consumer, business, and internal facing
                 applications. I love building impactful products that have a
                 pleasant user experience.
               </IntroText>
               <span>
-                <a href="https://github.com/gzcharleszhang">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://github.com/gzcharleszhang"
+                >
                   <SocialIcon icon={faGithub} size="2x" />
                 </a>
-                <a href="https://linkedin.com/in/gzcz">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://linkedin.com/in/gzcz"
+                >
                   <SocialIcon icon={faLinkedin} size="2x" />
                 </a>
               </span>

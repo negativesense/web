@@ -5,8 +5,13 @@ import Sound from "react-sound";
 
 const Container = styled.div`
   text-align: center;
-  color: #ffffff;
-  margin-top: 25%;
+  color: ${props => props.theme.primary};
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 `;
 
 export const FriendOffer = ({ company }) => {
