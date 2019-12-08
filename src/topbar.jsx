@@ -18,6 +18,8 @@ const Link = styled.a`
   &:hover {
     cursor: pointer;
     transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
     font-weight: bold;
   }
 
@@ -74,15 +76,21 @@ const Slider = styled.div`
   ${props =>
     props.themeType === "darkTheme" &&
     `
+      scale(1.2);
       transform: translateX(20px);
+      -moz-transform: translateX(20px);
+      -webkit-transform: translateX(20px);
 
       @media only screen and (max-width: 760px) {
         transform: translateX(15px);
-
+        -moz-transform: translateX(15px);
+        -webkit-transform: translateX(15px);
       }
 
       @media only screen and (max-width: 420px) {
         transform: translateX(11px);
+        -moz-transform: translateX(11px);
+        -webkit-transform: translateX(11px);
       }
     `};
 `;
