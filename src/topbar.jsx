@@ -13,13 +13,16 @@ const Link = styled.a`
   color: ${({ theme }) => theme.primary};
   margin: 0 15px;
   text-decoration-line: none;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     cursor: pointer;
+    transform: scale(1.2);
+    font-weight: bold;
   }
 
   @media only screen and (max-width: 760px) {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0 10px;
   }
 `;
@@ -44,8 +47,8 @@ const ThemeSwitch = styled.div`
   }
 
   @media only screen and (max-width: 420px) {
-    width: 22px;
-    height: 12px;
+    width: 25px;
+    height: 14px;
     margin: 0 10px;
   }
 `;
@@ -64,8 +67,8 @@ const Slider = styled.div`
   }
 
   @media only screen and (max-width: 420px) {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
 
   ${props =>
@@ -80,7 +83,6 @@ const Slider = styled.div`
 
       @media only screen and (max-width: 420px) {
         transform: translateX(11px);
-
       }
     `};
 `;
@@ -95,7 +97,7 @@ const TopBar = ({ onThemeChange, theme }) => {
   };
   return (
     <Container>
-      <Link href="/">About</Link>
+      <Link href="/">About</Link>{" "}
       <Link
         target="_blank"
         rel="noopener noreferrer"
