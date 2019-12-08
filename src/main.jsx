@@ -22,7 +22,6 @@ const MainContainer = styled.div`
     -webkit-transform: none;
     transform: none;
     margin-top: 30px;
-    padding: 0 12%;
   }
 `;
 

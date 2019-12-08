@@ -105,14 +105,8 @@ const TopBar = ({ onThemeChange, theme }) => {
   };
   return (
     <Container>
-      <Link href="/">About</Link>{" "}
-      <Link
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/gzcharleszhang"
-      >
-        Projects
-      </Link>
+      <Link href="/">About</Link>
+      <Link href="/projects">Projects</Link>
       {/* <Link href="blog">Blog</Link> */}
       <Link target="_blank" rel="noopener noreferrer" href="resume.pdf">
         Resume
