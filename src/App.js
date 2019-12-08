@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
-import Placeholder from "./placeholder.component";
-// import Timeline from "./timeline.component";
 import { Github, LinkedIn } from "./socials";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import {
@@ -122,7 +120,7 @@ const App = () => {
               path="/dpeng"
               component={() => <Message message="Your rent is due." />}
             />
-            <Route component={Placeholder} />
+            <Route component={Main} />
           </Switch>
         </BrowserRouter>
       </React.Fragment>

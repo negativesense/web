@@ -112,7 +112,7 @@ export const Birthday = ({ name }) => {
 
 const Wrapper = styled.div`
   text-align: center;
-  color: #ffffff;
+  color: ${props => props.theme.primary};
 `;
 
 export const FriendOfferCrazy = ({ company }) => {
@@ -143,7 +143,7 @@ export const FriendOfferCrazy = ({ company }) => {
   const elements = [];
   const el = (
     <Wrapper>
-      <Sound url="jason.mp3" playStatus={Sound.status.PLAYING} loop />
+      <Sound url="jason-nsfw.mp3" playStatus={Sound.status.PLAYING} loop />
       <h2 className="friend-text">Congrats on your {company} offer! 😍🎉</h2>
     </Wrapper>
   );
