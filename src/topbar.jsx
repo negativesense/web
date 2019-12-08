@@ -13,14 +13,9 @@ const Link = styled.a`
   color: ${({ theme }) => theme.primary};
   margin: 0 15px;
   text-decoration-line: none;
-  transition: all 0.2s ease-in-out;
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    font-weight: bold;
   }
 
   @media only screen and (max-width: 760px) {
