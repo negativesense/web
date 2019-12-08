@@ -3,6 +3,7 @@ import anime from "animejs";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const MainContainer = styled.div`
   color: ${({ theme }) => theme.primary};
@@ -111,13 +112,13 @@ const Main = () => {
       })
       .add({
         targets: ".name",
-        translateY: ["-300", 0],
+        translateY: ["-300px", 0],
         opacity: [0, 1],
         duration: 500
       })
       .add({
         targets: ".intro",
-        translateY: ["300", 0],
+        translateY: ["300px", 0],
         opacity: [0, 1],
         duration: 500
       })
@@ -157,6 +158,9 @@ const Main = () => {
                   href="https://linkedin.com/in/gzcz"
                 >
                   <SocialIcon icon={faLinkedin} size="2x" />
+                </a>
+                <a href="mailto:hello@czhang.me">
+                  <SocialIcon icon={faEnvelope} size="2x" />
                 </a>
               </span>
             </div>
