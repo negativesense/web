@@ -35,6 +35,8 @@ const AboutContainer = styled.div`
 `;
 
 const HeadshotContainer = styled.div`
+  opacity: 0;
+
   & > img {
     width: 200px;
     height: 200px;
@@ -58,6 +60,7 @@ const IntroContainer = styled.div`
 const Name = styled.div`
   font-weight: bold;
   font-size: 100px;
+  opacity: 0;
 
   @media only screen and (max-width: 1200px) {
     font-size: 70px;
@@ -102,27 +105,28 @@ const SocialIcon = styled(FontAwesomeIcon)`
 
 const Main = () => {
   useEffect(() => {
-    anime({
-      targets: ".name",
-      translateY: -1000,
-      duration: 1500,
-      direction: "reverse",
-      easing: "easeInSine"
-    });
-    anime({
-      targets: ".intro",
-      translateY: 1000,
-      direction: "reverse",
-      duration: 2000,
-      easing: "easeInSine"
-    });
-    anime({
-      targets: ".headshot",
-      translateX: 1000,
-      duration: 2500,
-      direction: "reverse",
-      easing: "easeInSine"
-    });
+    anime
+      .timeline({
+        easing: "easeInSine"
+      })
+      .add({
+        targets: ".name",
+        translateY: ["-300", 0],
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: ".intro",
+        translateY: ["300", 0],
+        opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: ".headshot",
+        translateX: ["300px", 0],
+        opacity: [0, 1],
+        duration: 500
+      });
   }, []);
 
   return (
@@ -131,7 +135,7 @@ const Main = () => {
         <AboutContainer>
           <IntroContainer>
             <Name className="name">Charles Zhang</Name>
-            <div className="intro">
+            <div className="intro" style={{ opacity: 0 }}>
               <IntroText>
                 Hi there, I am a Computer Science student at the University of
                 Waterloo. I have experience in full-stack and android
