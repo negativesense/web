@@ -21,7 +21,7 @@ const MainContainer = styled.div`
     -webkit-transform: none;
     transform: none;
     margin-top: 30px;
-    padding: 0 20px;
+    padding: 0 12%;
   }
 `;
 
@@ -68,11 +68,11 @@ const Name = styled.div`
   }
 
   @media only screen and (max-width: 760px) {
-    font-size: 35px;
+    font-size: 40px;
   }
 
   @media only screen and (max-width: 420px) {
-    font-size: 25px;
+    font-size: 30px;
   }
 `;
 
