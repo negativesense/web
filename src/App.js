@@ -59,12 +59,12 @@ const App = () => {
     <ThemeProvider theme={themes[theme] || themes[defaultTheme]}>
       <React.Fragment>
         <Background />
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <TopBar
-            onThemeChange={onThemeChange}
-            theme={themes[theme] ? theme : defaultTheme}
-          />
-          <Content>
+        <TopBar
+          onThemeChange={onThemeChange}
+          theme={themes[theme] ? theme : defaultTheme}
+        />
+        <Content>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Switch>
               <Route exact path="/" component={Main} />
               <Route exact path="/github" component={Github} />
@@ -139,8 +139,8 @@ const App = () => {
               />
               <Route component={Main} />
             </Switch>
-          </Content>
-        </BrowserRouter>
+          </BrowserRouter>
+        </Content>
       </React.Fragment>
     </ThemeProvider>
   );
