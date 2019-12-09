@@ -20,15 +20,19 @@ const themes = {
     primary: "#495867",
     secondary: "#577899",
     light: "#bed4ea",
-    background: "#f7fbff",
-    bright: "#54a9ff"
+    background: "#e6ecf2",
+    cardBackground: "#f7fbff",
+    bright: "#54a9ff",
+    shadow: "#c7cdd4"
   },
   darkTheme: {
     background: "#495867",
+    cardBackground: "#596c80",
     secondary: "#577899",
     light: "#bed4ea",
-    primary: "#f7fbff",
-    bright: "#54a9ff"
+    primary: "#e6ecf2",
+    bright: "#54a9ff",
+    shadow: "black"
   }
 };
 
