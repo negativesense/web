@@ -32,7 +32,7 @@ const themes = {
     light: "#bed4ea",
     primary: "#e6ecf2",
     bright: "#54a9ff",
-    shadow: "black"
+    shadow: "#333333"
   }
 };
 
@@ -43,7 +43,7 @@ const Background = createGlobalStyle`
 `;
 
 const Content = styled.div`
-  padding: 0 12%;
+  padding: 0 10%;
 `;
 
 const App = () => {

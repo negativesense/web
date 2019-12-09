@@ -16,29 +16,51 @@ const Container = styled.a`
     cursor: pointer;
     transform: scale(1.1, 1.1);
   }
+
+  @media only screen and (max-width: 350px) {
+    width: 250px;
+    height: 320px;
+  }
 `;
 
 const TextContainer = styled.div`
   padding: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media only screen and (max-width: 350px) {
+    padding: 15px;
+  }
 `;
 
 const Image = styled.img`
   width: 300px;
   height: 180px;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
+
+  @media only screen and (max-width: 350px) {
+    width: 250px;
+    height: 150px;
+  }
 `;
 
 const Title = styled.div`
   color: ${props => props.theme.primary};
   font-size: 20px;
   font-weight: bold;
+
+  @media only screen and (max-width: 350px) {
+    font-size: 14px;
+  }
 `;
 
 const Description = styled.div`
   margin-top: 20px;
   color: ${props => props.theme.primary};
+
+  @media only screen and (max-width: 350px) {
+    font-size: 14px;
+  }
 `;
 
 const Project = ({ imgSrc, title, children, href }) => (

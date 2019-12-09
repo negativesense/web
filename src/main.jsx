@@ -138,7 +138,7 @@ const Main = () => {
             <div className="intro" style={{ opacity: 0 }}>
               <IntroText>
                 Hi there, I am a Computer Science student at the University of
-                Waterloo. I have experience in full-stack and android
+                Waterloo. I have experience in full-stack and Android
                 development for consumer, business, and internal facing
                 applications. I love building impactful products that have a
                 pleasant user experience.

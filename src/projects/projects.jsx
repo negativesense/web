@@ -5,7 +5,7 @@ import anime from "animejs";
 import Project from "./project";
 
 const Container = styled.div`
-  margin: 30px;
+  margin: 30px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
