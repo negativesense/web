@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Container = styled.div`
   padding: 30px 20px;
@@ -8,7 +9,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Link = styled.a`
+const Link = styled(NavLink)`
   font-size: 20px;
   color: ${({ theme }) => theme.primary};
   margin: 0 15px;
@@ -105,10 +106,10 @@ const TopBar = ({ onThemeChange, theme }) => {
   };
   return (
     <Container>
-      <Link href="/">About</Link>
-      <Link href="/projects">Projects</Link>
+      <Link to="/">About</Link>
+      <Link to="/projects">Projects</Link>
       {/* <Link href="blog">Blog</Link> */}
-      <Link target="_blank" rel="noopener noreferrer" href="resume.pdf">
+      <Link target="_blank" rel="noopener noreferrer" to="resume.pdf">
         Resume
       </Link>
       <ThemeSwitch onClick={onThemeSwitchClick}>
