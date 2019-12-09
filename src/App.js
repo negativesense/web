@@ -47,19 +47,23 @@ const Content = styled.div`
 `;
 
 const App = () => {
+  const defaultTheme = "lightTheme";
   const [theme, setTheme] = useState(
-    window.localStorage.getItem("theme") || "lightTheme"
+    window.localStorage.getItem("theme") || defaultTheme
   );
   const onThemeChange = updatedTheme => {
     window.localStorage.setItem("theme", updatedTheme);
     setTheme(updatedTheme);
   };
   return (
-    <ThemeProvider theme={themes[theme]}>
+    <ThemeProvider theme={themes[theme] || themes[defaultTheme]}>
       <React.Fragment>
         <Background />
         <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <TopBar onThemeChange={onThemeChange} theme={theme} />
+          <TopBar
+            onThemeChange={onThemeChange}
+            theme={themes[theme] ? theme : defaultTheme}
+          />
           <Content>
             <Switch>
               <Route exact path="/" component={Main} />
