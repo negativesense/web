@@ -8,7 +8,7 @@ const Container = styled.a`
   height: 380px;
   box-shadow: 3px 3px 10px ${props => props.theme.shadow};
   transition: transform 0.2s ease-in-out;
-  background-color: ${props => props.theme.cardBackground};
+  background-color: ${props => props.theme.foreground};
   border-radius: 5px;
   margin: 30px 0;
   text-decoration-line: none;

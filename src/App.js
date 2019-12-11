@@ -1,19 +1,9 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import { BrowserRouter } from "react-router-dom";
 
-import { Github, LinkedIn } from "./socials";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import {
-  FriendOffer,
-  Birthday,
-  FriendOfferCrazy,
-  Crazy,
-  Message
-} from "./friends";
-import Main from "./main";
 import TopBar from "./topbar";
-import Projects from "./projects/projects";
-// https://coolors.co/495867-577899-bed4ea-f7fbff-54a9ff
+import Routes from "./routes";
 
 const themes = {
   lightTheme: {
@@ -21,14 +11,14 @@ const themes = {
     secondary: "#577899",
     light: "#bed4ea",
     background: "#e6ecf2",
-    cardBackground: "#f7fbff",
+    foreground: "#f7fbff",
     bright: "#54a9ff",
     shadow: "#c7cdd4",
     trophy: "#f5c02f"
   },
   darkTheme: {
     background: "#495867",
-    cardBackground: "#596c80",
+    foreground: "#596c80",
     secondary: "#577899",
     light: "#bed4ea",
     primary: "#e6ecf2",
@@ -67,80 +57,7 @@ const App = () => {
             theme={themes[theme] ? theme : defaultTheme}
           />
           <Content>
-            <Switch>
-              <Route exact path="/" component={Main} />
-              <Route exact path="/github" component={Github} />
-              <Route exact path="/linkedin" component={LinkedIn} />
-              <Route exact path="/projects" component={Projects} />
-              <Route
-                exact
-                path="/jason"
-                component={() => <FriendOfferCrazy company="IFDS" />}
-              />
-              <Route
-                exact
-                path="/kevin"
-                component={() => <FriendOffer company="Zyng🅰️" />}
-              />
-              <Route
-                exact
-                path="/kallen"
-                component={() => <FriendOffer company="G🅾️🅾️gle" />}
-              />
-              <Route
-                exact
-                path="/keith"
-                component={() => <FriendOffer company="🅱️lipp" />}
-              />
-              <Route
-                exact
-                path="/gabe"
-                component={() => <FriendOffer company="M🅰️nulife" />}
-              />
-              <Route
-                exact
-                path="/wmloh"
-                component={() => <FriendOffer company="Thomson Reuters" />}
-              />
-              <Route
-                exact
-                path="/anna"
-                component={() => <FriendOffer company="OTPP" />}
-              />
-              <Route
-                exact
-                path="/aaron"
-                component={() => <Birthday name="Aaron" />}
-              />
-              <Route
-                exact
-                path="/anson"
-                component={() => <Crazy message="Welcome to Waterloo 😍" />}
-              />
-              <Route
-                exact
-                path="/karen"
-                component={() => <Message message="妈咪仲唔训觉？😡" />}
-              />
-              <Route
-                exact
-                path="/nicole"
-                component={() => (
-                  <Message message="Happy 🅱️elated 🅱️irthday!!" />
-                )}
-              />
-              <Route
-                exact
-                path="/vlee"
-                component={() => <Birthday name="🅱️ictor" />}
-              />
-              <Route
-                exact
-                path="/dpeng"
-                component={() => <Message message="Your rent is due." />}
-              />
-              <Route component={Main} />
-            </Switch>
+            <Routes />
           </Content>
         </BrowserRouter>
       </React.Fragment>
