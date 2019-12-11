@@ -56,8 +56,8 @@ const Projects = () => {
         title="Wine Prediction"
         href="https://github.com/gzcharleszhang/wine-quality-prediction"
       >
-        Using machine learning models and neural networks to classify the type
-        and predict the quality of wine.
+        Using machine learning models and neural networks to determine wine type
+        and quality.
         <br />
         <br />
         Python, scikit-learn, Keras, Pandas
