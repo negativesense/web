@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.a`
   width: 300px;
@@ -63,7 +65,17 @@ const Description = styled.div`
   }
 `;
 
-const Project = ({ imgSrc, title, children, href }) => (
+const TrophyIcon = styled(FontAwesomeIcon)`
+  margin-left: 10px;
+  color: ${props => props.theme.trophy};
+`;
+
+const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Project = ({ imgSrc, title, children, href, showTrophy = false }) => (
   <Container
     target="_blank"
     rel="noopener noreferrer"
@@ -72,7 +84,10 @@ const Project = ({ imgSrc, title, children, href }) => (
   >
     <Image src={imgSrc} alt="project_image" />
     <TextContainer>
-      <Title>{title}</Title>
+      <TitleContainer>
+        <Title>{title}</Title>
+        {showTrophy && <TrophyIcon icon={faTrophy} />}
+      </TitleContainer>
       <Description>{children}</Description>
     </TextContainer>
   </Container>

@@ -23,7 +23,8 @@ const themes = {
     background: "#e6ecf2",
     cardBackground: "#f7fbff",
     bright: "#54a9ff",
-    shadow: "#c7cdd4"
+    shadow: "#c7cdd4",
+    trophy: "#f5c02f"
   },
   darkTheme: {
     background: "#495867",
@@ -32,7 +33,8 @@ const themes = {
     light: "#bed4ea",
     primary: "#e6ecf2",
     bright: "#54a9ff",
-    shadow: "#333333"
+    shadow: "#333333",
+    trophy: "#f5c02f"
   }
 };
 
