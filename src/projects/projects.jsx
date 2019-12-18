@@ -32,6 +32,7 @@ const Projects = () => {
         imgSrc="uwtimeline.jpeg"
         title="UW Timeline"
         href="https://github.com/gzcharleszhang/course-planner"
+        altImg="uw_timeline"
       >
         An application that helps students at the University of Waterloo to plan
         their future courses with ease.
@@ -43,6 +44,7 @@ const Projects = () => {
         imgSrc="receiptify.png"
         title="Receiptify"
         href="https://github.com/gzcharleszhang/reCeiptify"
+        altImg="receiptify"
         showTrophy
       >
         An application that uses OCR to parse receipts, then allows the user to
@@ -55,6 +57,7 @@ const Projects = () => {
         imgSrc="wine.jpg"
         title="Wine Prediction"
         href="https://github.com/gzcharleszhang/wine-quality-prediction"
+        altImg="wine"
       >
         Using machine learning models and neural networks to determine wine type
         and quality.
@@ -66,6 +69,7 @@ const Projects = () => {
         imgSrc="pickleleaf.png"
         title="PickleLeaf"
         href="https://github.com/gzcharleszhang/pickleleaf"
+        altImg="pickleleaf"
       >
         A web application that provides a marketplace for users to buy and sell
         textbooks.
@@ -77,6 +81,7 @@ const Projects = () => {
         imgSrc="toronto-traffic.png"
         title="Traffic Data Visualization"
         href="https://github.com/gzcharleszhang/traffic-data-visualization"
+        altImg="traffic_data"
       >
         Interactive maps and graphs that visualizes traffic data in the city of
         Toronto.
@@ -88,6 +93,7 @@ const Projects = () => {
         imgSrc="lejr.png"
         title="Lejr"
         href="https://github.com/gzcharleszhang/Lejr"
+        altImg="lejr"
         showTrophy
       >
         An app that keeps track of loans between friends and supports repayments
@@ -100,6 +106,7 @@ const Projects = () => {
         imgSrc="chess.jpeg"
         title="AI Chess"
         href="https://github.com/gzcharleszhang/AIChessGame"
+        altImg="chess"
       >
         A chess game which the player can choose to battle an AI or another
         online player.
@@ -111,6 +118,7 @@ const Projects = () => {
         imgSrc="trapped.png"
         title="Trapped"
         href="https://github.com/gzcharleszhang/trapped"
+        altImg="trapped"
       >
         A horror themed puzzle game which the player's goal is to escape the
         building they are trapped in.

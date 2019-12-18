@@ -75,14 +75,21 @@ const TitleContainer = styled.div`
   align-items: center;
 `;
 
-const Project = ({ imgSrc, title, children, href, showTrophy = false }) => (
+const Project = ({
+  imgSrc,
+  title,
+  children,
+  href,
+  altImg = "project_image",
+  showTrophy = false
+}) => (
   <Container
     target="_blank"
     rel="noopener noreferrer"
     href={href}
     className="project"
   >
-    <Image src={imgSrc} alt="project_image" />
+    <Image src={imgSrc} alt={altImg} />
     <TextContainer>
       <TitleContainer>
         <Title>{title}</Title>
