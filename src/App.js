@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
+import ReactGA from "react-ga";
+import PublicIp from "public-ip";
 
 import TopBar from "./topbar";
 import Routes from "./routes";
+import { IPContext } from "./context";
 
 const themes = {
   lightTheme: {
@@ -39,6 +42,13 @@ const Content = styled.div`
 `;
 
 const App = () => {
+  if (process.env.NODE_ENV === "development") {
+    ReactGA.initialize("UA-154764209-2");
+  } else if (process.env.NODE_ENV === "production") {
+    ReactGA.initialize("UA-154764209-1");
+  }
+  const [ipv4, setIpv4] = useState(null);
+  PublicIp.v4().then(ip => setIpv4(ip));
   const defaultTheme = "lightTheme";
   const [theme, setTheme] = useState(
     window.localStorage.getItem("theme") || defaultTheme
@@ -49,18 +59,20 @@ const App = () => {
   };
   return (
     <ThemeProvider theme={themes[theme] || themes[defaultTheme]}>
-      <React.Fragment>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <Background />
-          <TopBar
-            onThemeChange={onThemeChange}
-            theme={themes[theme] ? theme : defaultTheme}
-          />
-          <Content>
-            <Routes />
-          </Content>
-        </BrowserRouter>
-      </React.Fragment>
+      <IPContext.Provider value={ipv4}>
+        <React.Fragment>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <Background />
+            <TopBar
+              onThemeChange={onThemeChange}
+              theme={themes[theme] ? theme : defaultTheme}
+            />
+            <Content>
+              <Routes />
+            </Content>
+          </BrowserRouter>
+        </React.Fragment>
+      </IPContext.Provider>
     </ThemeProvider>
   );
 };
