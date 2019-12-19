@@ -41,12 +41,15 @@ const Content = styled.div`
   padding: 0 10%;
 `;
 
+if (process.env.NODE_ENV === "development") {
+  ReactGA.initialize("UA-154764209-2", {
+    debug: true
+  });
+} else if (process.env.NODE_ENV === "production") {
+  ReactGA.initialize("UA-154764209-1");
+}
+
 const App = () => {
-  if (process.env.NODE_ENV === "development") {
-    ReactGA.initialize("UA-154764209-2");
-  } else if (process.env.NODE_ENV === "production") {
-    ReactGA.initialize("UA-154764209-1");
-  }
   const [ipv4, setIpv4] = useState(null);
   PublicIp.v4().then(ip => setIpv4(ip));
   const defaultTheme = "lightTheme";
