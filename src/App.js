@@ -45,7 +45,7 @@ if (process.env.NODE_ENV === "development") {
   ReactGA.initialize("UA-154764209-2", {
     debug: true
   });
-} else if (process.env.NODE_ENV === "production") {
+} else {
   ReactGA.initialize("UA-154764209-1");
 }
 
