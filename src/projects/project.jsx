@@ -10,13 +10,17 @@ const Container = styled.a`
   transition: transform 0.2s ease-in-out;
   background-color: ${props => props.theme.foreground};
   border-radius: 5px;
-  margin: 30px 0;
+  margin: 30px 20px;
   text-decoration-line: none;
   opacity: 0;
 
   &:hover {
     cursor: pointer;
     transform: scale(1.1, 1.1);
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin: 30px 0px;
   }
 
   @media only screen and (max-width: 350px) {
