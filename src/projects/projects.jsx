@@ -5,15 +5,18 @@ import anime from "animejs";
 import Project from "./project";
 
 const Container = styled.div`
-  margin: 30px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
 
   &::after {
     content: "";
-    width: 300px;
+    width: 340px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 `;
 
@@ -120,8 +123,8 @@ const Projects = () => {
         href="https://github.com/gzcharleszhang/trapped"
         altImg="trapped"
       >
-        A horror themed puzzle game which the player's goal is to escape the
-        building they are trapped in.
+        A horror themed puzzle game which the goal is to escape the building
+        they are trapped in.
         <br />
         <br />
         Unreal Engine, Blueprints
