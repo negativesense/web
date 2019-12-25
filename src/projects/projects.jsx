@@ -123,8 +123,8 @@ const Projects = () => {
         href="https://github.com/gzcharleszhang/trapped"
         altImg="trapped"
       >
-        A horror themed puzzle game which the goal is to escape the building
-        they are trapped in.
+        A horror themed puzzle game which the goal is to escape the building you
+        are trapped in.
         <br />
         <br />
         Unreal Engine, Blueprints
