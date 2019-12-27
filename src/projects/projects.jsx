@@ -9,6 +9,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-items: center;
+  grid-gap: 50px;
 
   &::after {
     content: "";
@@ -17,6 +18,7 @@ const Container = styled.div`
 
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 10px;
   }
 `;
 
