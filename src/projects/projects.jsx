@@ -9,7 +9,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-items: center;
-  grid-gap: 50px;
+  grid-gap: 40px;
 
   &::after {
     content: "";
