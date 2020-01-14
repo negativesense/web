@@ -34,7 +34,9 @@ const Routes = () => {
       <Route
         exact
         path="/kevin"
-        component={() => <FriendOffer company="Zyng🅰️" />}
+        component={() => (
+          <Message message="Happy Birthday! I bought you minecraft: https://store.steampowered.com/account/ackgift/87798CA8D72ABB18" />
+        )}
       />
       <Route
         exact
