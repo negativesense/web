@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ReactGA from "react-ga";
 
-import { Github, LinkedIn } from "./socials";
+import { Github, LinkedIn, Food } from "./socials";
 import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import {
   FriendOffer,
@@ -26,6 +26,7 @@ const Routes = () => {
       <Route exact path="/github" component={Github} />
       <Route exact path="/linkedin" component={LinkedIn} />
       <Route exact path="/projects" component={Projects} />
+      <Route exact path="/food" component={Food} />
       <Route
         exact
         path="/jason"
