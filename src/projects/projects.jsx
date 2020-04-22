@@ -34,6 +34,18 @@ const Projects = () => {
   return (
     <Container>
       <Project
+        imgSrc="discord-bot.png"
+        title="Discord Bot"
+        href="https://github.com/gzcharleszhang/discord-bot"
+        altImg="discord_bot"
+      >
+        A versatile discord bot: latest COVID-19 stats,
+        memes on Reddit, and more.
+        <br />
+        <br />
+        NodeJS, Docker, GCP
+      </Project>
+      <Project
         imgSrc="uwtimeline.jpeg"
         title="UW Timeline"
         href="https://github.com/gzcharleszhang/course-planner"

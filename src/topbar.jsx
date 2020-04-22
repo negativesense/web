@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const Container = styled.div`
@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Link = styled(NavLink)`
+const StyledLink = css`
   font-size: 20px;
   color: ${({ theme }) => theme.primary};
   margin: 0 15px;
@@ -29,6 +29,14 @@ const Link = styled(NavLink)`
     margin: 0 10px;
   }
 `;
+
+const Link = styled(NavLink)`
+  ${StyledLink}
+`
+
+const Externalink = styled.a`
+  ${StyledLink}
+`
 
 const ThemeSwitch = styled.div`
   display: flex;
@@ -112,6 +120,12 @@ const TopBar = ({ onThemeChange, theme }) => {
       <Link target="_blank" rel="noopener noreferrer" to="resume.pdf">
         Resume
       </Link>
+      <Externalink
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.notion.so/cdb52b032a6f4e3eb6e2c6e1cf1df9fa?v=daaf24b3d13041bcad08481fd54908b5">
+        Food
+      </Externalink>
       <ThemeSwitch onClick={onThemeSwitchClick}>
         <Slider themeType={theme} />
       </ThemeSwitch>
