@@ -34,10 +34,6 @@ const Link = styled(NavLink)`
   ${StyledLink}
 `
 
-const Externalink = styled.a`
-  ${StyledLink}
-`
-
 const ThemeSwitch = styled.div`
   display: flex;
   align-items: center;
@@ -120,12 +116,6 @@ const TopBar = ({ onThemeChange, theme }) => {
       <Link target="_blank" rel="noopener noreferrer" to="resume.pdf">
         Resume
       </Link>
-      <Externalink
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.notion.so/cdb52b032a6f4e3eb6e2c6e1cf1df9fa?v=daaf24b3d13041bcad08481fd54908b5">
-        Food
-      </Externalink>
       <ThemeSwitch onClick={onThemeSwitchClick}>
         <Slider themeType={theme} />
       </ThemeSwitch>
