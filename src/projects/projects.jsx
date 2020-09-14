@@ -39,7 +39,7 @@ const Projects = () => {
         href="https://github.com/gzcharleszhang/stego"
         altImg="stego"
       >
-        A CLI that hides and reveals secret messages
+        A tool that hides and reveals messages
         in images using the LSB steganography technique.
         <br />
         <br />
