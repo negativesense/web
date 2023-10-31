@@ -12,6 +12,7 @@ import {
 } from "./friends";
 import Main from "./main";
 import Projects from "./projects/projects";
+import Countdown from "./countdown";
 
 const RedirectHome = () => <Redirect to="/" />;
 
@@ -26,6 +27,7 @@ const Routes = () => {
       <Route exact path="/github" component={Github} />
       <Route exact path="/linkedin" component={LinkedIn} />
       <Route exact path="/projects" component={Projects} />
+      <Route exact path="/countdown" component={Countdown} />
       <Route
         exact
         path="/jason"

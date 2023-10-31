@@ -12,6 +12,7 @@
     "animejs": "^3.0.1",
     "gh-pages": "^2.0.1",
     "history": "^4.10.1",
+    "moment": "^2.29.4",
     "public-ip": "^4.0.0",
     "react": "^16.8.6",
     "react-anime": "^2.2.0",
