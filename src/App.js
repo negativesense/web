@@ -39,6 +39,7 @@ const Background = createGlobalStyle`
 
 const Content = styled.div`
   padding: 0 10%;
+  overflow: hidden;
 `;
 
 if (process.env.NODE_ENV === "development") {
