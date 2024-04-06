@@ -69,7 +69,7 @@ const Poop = () => {
 }
 
 const Countdown = () => {
-  const targetTime = moment('20240321 00:00', 'YYYYMMDD hh:mm')
+  const targetTime = moment('20240424 00:00', 'YYYYMMDD hh:mm')
   const [currTime, setCurrTime] = useState(moment())
 
   useEffect(() => {
