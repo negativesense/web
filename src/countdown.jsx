@@ -1,4 +1,4 @@
-import anime, { random } from "animejs";
+import anime from "animejs";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -19,8 +19,10 @@ const CountdownContainer = styled.div`
 const BigPoop = styled.div`
   position: absolute;
   font-size: 150px;
-  top: ${props => props.y + "%"};
-  left: ${props => props.x + "%"};
+  top: ${props => props.top + "%"};
+  left: ${props => props.left + "%"};
+  bottom: ${props => props.bottom + "%"};
+  right: ${props => props.right + "%"};
   overflow: hidden;
 `
 
@@ -48,7 +50,7 @@ const Poop = () => {
       direction: 'alternate',
       easing: 'easeInOutSine',
       duration: 2000,
-      top: "10%",
+      bottom: "80%",
     })
     anime({
       targets: ".poop3",
@@ -61,15 +63,19 @@ const Poop = () => {
   }, []);
 
   return <>
+    {/* upper left */}
     <BigPoop className="poop0">💩</BigPoop>
-    <BigPoop className="poop1" y={80}>💩</BigPoop>
-    <BigPoop className="poop2" x={80} y={80}>💩</BigPoop>
-    <BigPoop className="poop3" x={80}>💩</BigPoop>
+    {/* lower left */}
+    <BigPoop className="poop1" bottom={10}>💩</BigPoop>
+    {/* lower right */}
+    <BigPoop className="poop2" right={10} bottom={10}>💩</BigPoop>
+    {/* upper right */}
+    <BigPoop className="poop3" right={10}>💩</BigPoop>
   </>
 }
 
 const Countdown = () => {
-  const targetTime = moment('20240424 00:00', 'YYYYMMDD hh:mm')
+  const targetTime = moment('20241012 13:00', 'YYYYMMDD hh:mm')
   const [currTime, setCurrTime] = useState(moment())
 
   useEffect(() => {
