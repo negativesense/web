@@ -24,6 +24,33 @@ const BigPoop = styled.div`
   bottom: ${props => props.bottom + "%"};
   right: ${props => props.right + "%"};
   overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+`
+
+const ClickPoop = styled.div`
+  position: fixed;
+  font-size: 50px;
+  top: ${props => props.top + "px"};
+  left: ${props => props.left + "px"};
+  bottom: ${props => props.bottom + "px"};
+  right: ${props => props.right + "px"};
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+`
+
+const PoopClickerContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`
+
+const SmallCountdown = styled.div`
+  font-size: large;
+  margin: 5px 0;
 `
 
 const Poop = () => {
@@ -74,8 +101,49 @@ const Poop = () => {
   </>
 }
 
+const PoopClicker = () => {
+  const [poopCoords, setpoopCoords] = useState([])
+
+  useEffect(() => {
+    anime({
+      targets: `.clickpoop`,
+      opacity: 0,
+      duration: 6000,
+    })
+  }, [poopCoords])
+
+  const onMouseClick = (e) => {
+    // remove stale poops older than 5 seconds
+    const freshPoops = poopCoords.filter(p => (Date.now() - p[2]) < 5000 )
+    setpoopCoords([...freshPoops, [e.clientX, e.clientY, Date.now()]])
+  };
+
+  return (
+    <>
+      {
+        (poopCoords.length > 0)
+        ? poopCoords.map(p =>
+            <ClickPoop
+              key={(p[2]).toString()}
+              className="clickpoop"
+              left={p[0] - 30}
+              top={p[1] - 5}
+            >💩</ClickPoop>
+        )
+        : null
+      }
+      <PoopClickerContainer onClick={onMouseClick} />
+    </>
+  )
+}
+
 const Countdown = () => {
-  const targetTime = moment('20241012 13:00', 'YYYYMMDD hh:mm')
+  const targetTime = moment('20241109 22:00', 'YYYYMMDD hh:mm')
+  const milestones = [
+    ["🎤 Taylor Swift", moment('20241115 16:00', 'YYYYMMDD hh:mm')],
+    ["🍣 Japan", moment('20241228 12:00', 'YYYYMMDD hh:mm')],
+    ["🤎 Anniversary", moment('20250327 03:00', 'YYYYMMDD hh:mm')]
+  ]
   const [currTime, setCurrTime] = useState(moment())
 
   useEffect(() => {
@@ -85,20 +153,33 @@ const Countdown = () => {
     }
   }, [])
 
-  let diff = moment.duration(targetTime.diff(currTime))
-  const days = Math.floor(diff.asDays())
-  diff = diff.subtract(days, 'd')
-  const hours = Math.floor(diff.asHours())
-  diff = diff.subtract(hours, 'h')
-  const minutes = Math.floor(diff.asMinutes())
-  diff = diff.subtract(minutes, 'm')
-  const seconds = Math.floor(diff.asSeconds())
+  const getDurationString = (target, detailed=false) => {
+    let diff = moment.duration(target.diff(currTime))
+    const days = Math.floor(diff.asDays())
+    diff = diff.subtract(days, 'd')
+    const hours = Math.floor(diff.asHours())
+    diff = diff.subtract(hours, 'h')
+    const minutes = Math.floor(diff.asMinutes())
+    diff = diff.subtract(minutes, 'm')
+    const seconds = Math.floor(diff.asSeconds())
+
+    return (detailed
+      ? `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`
+      : `${days} days ${hours} hours`
+    )
+  }
 
   return <>
+    <PoopClicker />
     <Poop />
     <CountdownContainer>
       <div>Time left until I see my schmoop <span className="poop">💩</span></div>
-      <div>{days} days {hours} hours {minutes} minutes {seconds} seconds</div>
+      <div>{getDurationString(targetTime, true)}</div>
+      {
+        milestones.map(m => (
+          <SmallCountdown>{m[0]}: {getDurationString(m[1])}</SmallCountdown>
+        ))
+      }
     </CountdownContainer>
   </>
 }
