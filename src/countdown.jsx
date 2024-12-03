@@ -14,6 +14,8 @@ const CountdownContainer = styled.div`
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   font-size: xx-large;
+  user-select: none;
+  pointer-events: none;
 `
 
 const BigPoop = styled.div`
@@ -26,6 +28,7 @@ const BigPoop = styled.div`
   overflow: hidden;
   user-select: none;
   pointer-events: none;
+  z-index: 3;
 `
 
 const ClickPoop = styled.div`
@@ -38,6 +41,7 @@ const ClickPoop = styled.div`
   overflow: hidden;
   user-select: none;
   pointer-events: none;
+  z-index: 2;
 `
 
 const PoopClickerContainer = styled.div`
