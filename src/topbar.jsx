@@ -7,6 +7,8 @@ const Container = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
+  z-index: 10;
 `;
 
 const StyledLink = css`

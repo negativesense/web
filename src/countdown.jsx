@@ -5,17 +5,33 @@ import styled from "styled-components";
 
 
 const CountdownContainer = styled.div`
+  box-sizing: border-box;
   text-align: center;
   color: ${props => props.theme.primary};
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 16px;
   font-size: xx-large;
+  line-height: 1.4;
   user-select: none;
   pointer-events: none;
+  z-index: 1;
+
+  @media only screen and (max-width: 760px) {
+    font-size: x-large;
+    padding: 80px 12px;
+  }
+
+  @media only screen and (max-width: 420px) {
+    font-size: large;
+  }
 `
 
 const BigPoop = styled.div`
@@ -29,6 +45,14 @@ const BigPoop = styled.div`
   user-select: none;
   pointer-events: none;
   z-index: 3;
+
+  @media only screen and (max-width: 760px) {
+    font-size: 80px;
+  }
+
+  @media only screen and (max-width: 420px) {
+    font-size: 50px;
+  }
 `
 
 const ClickPoop = styled.div`
@@ -42,6 +66,10 @@ const ClickPoop = styled.div`
   user-select: none;
   pointer-events: none;
   z-index: 2;
+
+  @media only screen and (max-width: 420px) {
+    font-size: 35px;
+  }
 `
 
 const PoopClickerContainer = styled.div`
@@ -55,6 +83,22 @@ const PoopClickerContainer = styled.div`
 const SmallCountdown = styled.div`
   font-size: large;
   margin: 5px 0;
+
+  @media only screen and (max-width: 760px) {
+    font-size: medium;
+  }
+
+  @media only screen and (max-width: 420px) {
+    font-size: small;
+  }
+`
+
+const CountdownSection = styled.div`
+  margin: 30px 0;
+
+  @media only screen and (max-width: 420px) {
+    margin: 20px 0;
+  }
 `
 
 const Poop = () => {
@@ -95,9 +139,9 @@ const Poop = () => {
 
   return <>
     {/* upper left */}
-    <BigPoop className="poop0">💩</BigPoop>
+    <BigPoop className="poop0" top={0} left={10}>💩</BigPoop>
     {/* lower left */}
-    <BigPoop className="poop1" bottom={10}>💩</BigPoop>
+    <BigPoop className="poop1" bottom={10} left={10}>💩</BigPoop>
     {/* lower right */}
     <BigPoop className="poop2" right={10} bottom={10}>💩</BigPoop>
     {/* upper right */}
@@ -142,23 +186,36 @@ const PoopClicker = () => {
 }
 
 const Countdown = () => {
-  const targetTime = moment('20241109 22:00', 'YYYYMMDD hh:mm')
+  const targetTime = moment('20260929 07:00', 'YYYYMMDD hh:mm')
   const milestones = [
-    ["🎤 Taylor Swift", moment('20241115 16:00', 'YYYYMMDD hh:mm')],
-    ["🍣 Japan", moment('20241228 12:00', 'YYYYMMDD hh:mm')],
-    ["🤎 Anniversary", moment('20250327 03:00', 'YYYYMMDD hh:mm')]
+    ["💼 New Job", moment('20260817 00:00', 'YYYYMMDD hh:mm')],
+    ["🌺 Hawaii", moment('20261227 00:00', 'YYYYMMDD hh:mm')],
+    ["🤎 Wedding", moment('20270522 03:00', 'YYYYMMDD hh:mm')],
   ]
   const [currTime, setCurrTime] = useState(moment())
 
   useEffect(() => {
-    const interval = setInterval(() => setCurrTime(moment(), 1000))
+    const interval = setInterval(() => setCurrTime(moment()), 1000)
     return () => {
       clearInterval(interval)
     }
   }, [])
 
-  const getDurationString = (target, detailed=false) => {
-    let diff = moment.duration(target.diff(currTime))
+  const getDurationString = (target, detailed=false, reverse=false, useYears=false, useMonths=false) => {
+    let diff = reverse ? moment.duration(currTime.diff(target)) : moment.duration(target.diff(currTime))
+    let years = 0
+    let s = ""
+    
+    if (useYears) {
+      years = Math.floor(diff.asYears())
+      diff = diff.subtract(years, 'y')
+      s += `${years} years `
+    }
+    if (useMonths) {
+      const months = Math.floor(diff.asMonths())
+      diff = diff.subtract(months, 'M')
+      s += `${months} months `
+    }
     const days = Math.floor(diff.asDays())
     diff = diff.subtract(days, 'd')
     const hours = Math.floor(diff.asHours())
@@ -167,10 +224,11 @@ const Countdown = () => {
     diff = diff.subtract(minutes, 'm')
     const seconds = Math.floor(diff.asSeconds())
 
-    return (detailed
+    s += (detailed
       ? `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`
-      : `${days} days ${hours} hours`
+      : (useMonths ? `${days} days` : `${days} days ${hours} hours`)
     )
+    return s
   }
 
   return <>
@@ -179,11 +237,17 @@ const Countdown = () => {
     <CountdownContainer>
       <div>Time left until I see my schmoop <span className="poop">💩</span></div>
       <div>{getDurationString(targetTime, true)}</div>
-      {
-        milestones.map(m => (
-          <SmallCountdown>{m[0]}: {getDurationString(m[1])}</SmallCountdown>
-        ))
-      }
+      <CountdownSection>
+        <SmallCountdown>{"😘 Poopies 4EVA"}: {getDurationString(moment('20220327 00:00', 'YYYYMMDD hh:mm'), false, true, true, true)}</SmallCountdown>
+        <SmallCountdown>{"💍 Time Since Engaged"}: {getDurationString(moment('20250609 00:00', 'YYYYMMDD hh:mm'), false, true, true, true)}</SmallCountdown>
+      </CountdownSection>
+      <CountdownSection>
+        {
+          milestones.map(m => (
+            <SmallCountdown key={m[0]}>{m[0]}: {getDurationString(m[1])}</SmallCountdown>
+          ))
+        }
+      </CountdownSection>
     </CountdownContainer>
   </>
 }

@@ -24,13 +24,13 @@
     "styled-components": "^4.3.2"
   },
   "scripts": {
-    "start": "NODE_ENV=development react-scripts start",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=development react-scripts start",
     "build": "NODE_ENV=production GENERATE_SOURCEMAP=false react-scripts build && yarn post-build",
     "post-build": "cp CNAME build && cp 404.html build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
-    "build-deploy": "yarn build && yarn deploy"
+    "build-deploy": "NODE_OPTIONS=--openssl-legacy-provider yarn build && yarn deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
